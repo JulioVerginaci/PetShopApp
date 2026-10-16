@@ -70,4 +70,10 @@ Route::middleware('auth')->group(function () {
 
     // Financeiro (funcionário)
     Route::get('/financeiro',[FinanceiroController::class, 'index'])->name('financeiro.index');
+Route::patch(
+    '/financeiro/ordens/{ordem}/pagamento',
+    [FinanceiroController::class, 'atualizarPagamento']
+)->name('financeiro.pagamento');
+
+
 });
